@@ -32,7 +32,6 @@ var markerRoot1, markerRoot2;
 
 var portal, portalMaterial;
 
-
 initialize();
 animate();
 
@@ -110,6 +109,7 @@ function initialize()
 	// build markerControls
 	kanjiMarker = new THREE.Group();
 	scene.add(kanjiMarker);
+	
 	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, kanjiMarker, {
 		type : 'pattern',
 		patternUrl : "data/kanji.patt",
@@ -185,7 +185,30 @@ function initialize()
 	skyMesh.layers.set(2);
 	smoothedRoot.add(skyMesh);
 	
+	//model added from here
 	
+	
+	
+	function onProgress(xhr) { console.log( (xhr.loaded / xhr.total * 100) + '% loaded' ); }
+	function onError(xhr) { console.log( 'An error happened' ); }
+	
+	new THREE.MTLLoader()
+		.setPath( 'models/' )
+		.load( 'fish-2.mtl', function ( materials ) {
+			materials.preload();
+	new THREE.OBJLoader()
+		.setMaterials( materials )
+		.setPath( 'models/' )
+		.load( 'fish-2.obj', function ( group ) {
+					mesh0 = group.children[0];
+					mesh0.material.side = THREE.DoubleSide;
+					mesh0.position.y = 0.25;
+					mesh0.scale.set(0.25,0.25,0.25);
+					mesh0.layers.set(2);
+					kanjimMrker.add(mesh0);
+				}, onProgress, onError );
+		});
+	//added until here
 
 }
 
