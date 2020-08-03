@@ -171,7 +171,19 @@ function initialize()
 	// the world beyond the portal
 	
 	// textures from http://www.humus.name/
-	
+	let skyMaterialArray = [
+		new THREE.MeshBasicMaterial( { map: loader.load("images/mountain/posx.jpg"), side: THREE.BackSide } ),
+		new THREE.MeshBasicMaterial( { map: loader.load("images/mountain/negx.jpg"), side: THREE.BackSide } ),
+		new THREE.MeshBasicMaterial( { map: loader.load("images/mountain/posy.jpg"), side: THREE.BackSide } ),
+		new THREE.MeshBasicMaterial( { map: loader.load("images/mountain/negy.jpg"), side: THREE.BackSide } ),
+		new THREE.MeshBasicMaterial( { map: loader.load("images/mountain/posz.jpg"), side: THREE.BackSide } ),
+		new THREE.MeshBasicMaterial( { map: loader.load("images/mountain/negz.jpg"), side: THREE.BackSide } ),
+	];
+	let skyMesh = new THREE.Mesh(
+		new THREE.CubeGeometry(30,30,30),
+		skyMaterialArray );
+	skyMesh.layers.set(2);
+	smoothedRoot.add(skyMesh);
 	
 	//model added from here
 	
@@ -180,7 +192,7 @@ function initialize()
 	function onProgress(xhr) { console.log( (xhr.loaded / xhr.total * 100) + '% loaded' ); }
 	function onError(xhr) { console.log( 'An error happened' ); }
 	
-	mesh0 = new THREE.Mesh(
+	let mesh0 = new THREE.Mesh(
 		new THREE.MTLLoader()
 		.setPath( 'models/' )
 		.load( 'fish-2.mtl', function ( materials ) {
