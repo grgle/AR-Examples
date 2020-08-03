@@ -122,8 +122,8 @@ function initialize()
 	mesh1.rotation.x = -Math.PI/2;
 	markerRoot1.add( mesh1 );
 	
-	function onProgress(xhr) { console.log( (xhr.loaded / xhr.total * 100) + '% loaded' ); }
-	function onError(xhr) { console.log( 'An error happened' ); }
+	//function onProgress(xhr) { console.log( (xhr.loaded / xhr.total * 100) + '% loaded' ); }
+	//function onError(xhr) { console.log( 'An error happened' ); }
 	
 	new THREE.MTLLoader()
 		.setPath( 'models/' )
