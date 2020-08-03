@@ -32,6 +32,8 @@ var markerRoot1, markerRoot2;
 
 var portal, portalMaterial;
 
+var mesh0
+
 initialize();
 animate();
 
@@ -109,7 +111,6 @@ function initialize()
 	// build markerControls
 	kanjiMarker = new THREE.Group();
 	scene.add(kanjiMarker);
-	
 	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, kanjiMarker, {
 		type : 'pattern',
 		patternUrl : "data/kanji.patt",
@@ -205,7 +206,7 @@ function initialize()
 					mesh0.position.y = 0.25;
 					mesh0.scale.set(0.25,0.25,0.25);
 					mesh0.layers.set(2);
-					kanjiMarker.add(mesh0);
+					smoothedRoot.add(mesh0);
 				}, onProgress, onError );
 		});
 	//added until here
