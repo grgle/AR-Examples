@@ -180,7 +180,8 @@ function initialize()
 	function onProgress(xhr) { console.log( (xhr.loaded / xhr.total * 100) + '% loaded' ); }
 	function onError(xhr) { console.log( 'An error happened' ); }
 	
-	new THREE.MTLLoader()
+	mesh0 = new THREE.Mesh(
+		new THREE.MTLLoader()
 		.setPath( 'models/' )
 		.load( 'fish-2.mtl', function ( materials ) {
 			materials.preload();
@@ -192,10 +193,11 @@ function initialize()
 					mesh0.material.side = THREE.DoubleSide;
 					mesh0.position.y = 0.25;
 					mesh0.scale.set(0.25,0.25,0.25);
-					mesh0.layers.set(1);
+					mesh0.layers.set(2);
 					smoothedRoot.add(mesh0);
 				}, onProgress, onError );
 		});
+		);
 	//added until here
 
 }
