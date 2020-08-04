@@ -122,8 +122,8 @@ function initialize()
 	mesh1.rotation.x = -Math.PI/2;
 	markerRoot1.add( mesh1 );
 	
-	//function onProgress(xhr) { console.log( (xhr.loaded / xhr.total * 100) + '% loaded' ); }
-	//function onError(xhr) { console.log( 'An error happened' ); }
+	function onProgress(xhr) { console.log( (xhr.loaded / xhr.total * 100) + '% loaded' ); }
+	function onError(xhr) { console.log( 'An error happened' ); }
 	
 	// Instantiate a loader
 
@@ -143,11 +143,7 @@ loader.load(
 
 		scene.add( gltf.scene );
 
-		gltf.animations; // Array<THREE.AnimationClip>
-		gltf.scene; // THREE.Group
-		gltf.scenes; // Array<THREE.Group>
-		gltf.cameras; // Array<THREE.Camera>
-		gltf.asset; // Object
+		
 
 	},
 	// called while loading is progressing
