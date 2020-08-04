@@ -1,0 +1,134 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.2.75",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Gifu1 subsampled10.clean.subsemple1.reduce"
+        }
+    ],
+    "materials" : [
+        {
+            "alphaMode" : "BLEND",
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "Material",
+            "normalTexture" : {
+                "index" : 0,
+                "scale" : 2.700000286102295,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Gifu1 subsampled10.clean.subsemple1.reduce",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "TEXCOORD_0" : 1
+                    },
+                    "indices" : 2,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "normal2_normals",
+            "uri" : "normal2_normals.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "colorl_vcols-normal2_normals",
+            "uri" : "colorl_vcols-normal2_normals.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 426655,
+            "max" : [
+                25.899839401245117,
+                -144.58935546875,
+                28.58449363708496
+            ],
+            "min" : [
+                -23.336963653564453,
+                -169.1739044189453,
+                -21.50522804260254
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 426655,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5125,
+            "count" : 430605,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 5119860,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3413240,
+            "byteOffset" : 5119860
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1722420,
+            "byteOffset" : 8533100
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 10255520,
+            "uri" : "gifu2.bin"
+        }
+    ]
+}
